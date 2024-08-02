@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ScreenShotModel } from "./models";
 import LinkPreview from "./components/LinkPreview";
+import Microlink from "@microlink/react";
 
 const dummyUrls: ScreenShotModel[] = [
   {
