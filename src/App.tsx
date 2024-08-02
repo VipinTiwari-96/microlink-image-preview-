@@ -1,24 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { ScreenShotModel } from "./models";
+import LinkPreview from "./components/LinkPreview";
+
+const dummyUrls: ScreenShotModel[] = [
+  {
+    url: "https://tailwindcss.com/docs/installation",
+    title: "Tailwind docs",
+  },
+  {
+    url: "https://www.npmjs.com/package/@microlink/react",
+    title: "Microlink docs",
+  },
+];
 
 function App() {
+  const [screenShotData, setScreenShotData] = useState<ScreenShotModel[]>([]);
+  const [selectedUrl, setSelectedUrl] = useState<string>("");
+
+  const getScreenShots = () => {
+    const url = "";
+  };
+
+  const getSelecteURL = (url: string) => {
+    setSelectedUrl(url);
+  };
+
+  const removeSelectedURL = () => {
+    setSelectedUrl("");
+  };
+
+  useEffect(() => {}, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="p-20">
+      {dummyUrls.map((item) => (
+        <LinkPreview
+          url={item.url}
+          title={item.title}
+          getSelecteURL={getSelecteURL}
+          removeSelectedURL={removeSelectedURL}
+        />
+      ))}
     </div>
   );
 }
