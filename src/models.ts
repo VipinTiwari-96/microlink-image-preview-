@@ -1,9 +1,3 @@
-export interface UrlModel {
-  id: number;
-  url: string;
-  title: string;
-}
-
 export interface ScreenShotModel {
   height: number;
   size: number;
