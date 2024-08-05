@@ -10,7 +10,7 @@ import React, {
 import { ScreenShotDataModel } from "../models";
 
 interface LinkPreviewProps {
-  url: string | undefined;
+  url: string;
   children: ReactNode;
 }
 const LinkPreview: FC<LinkPreviewProps> = ({ url, children }) => {
